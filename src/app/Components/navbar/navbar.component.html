@@ -1,0 +1,38 @@
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-full" style="background-color: rgb(11, 11, 11)">
+      <button class="navbar-toggler custom-toggler" type="button" (click)="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/home"
+               [ngClass]="{'router-link-active': router.url === '/home'}">
+                <h6><strong>Home</strong></h6>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/bird-dogs"
+               [ngClass]="{'router-link-active': router.url === '/bird-dogs'}">
+                <h6><strong>Bird-Dogs</strong></h6>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/mcgill-sit-ups"
+               [ngClass]="{'router-link-active': router.url === '/mcgill-sit-ups'}">
+                <h6><strong>McGill Sit-Ups</strong></h6>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/side-planks"
+               [ngClass]="{'router-link-active': router.url === '/side-planks'}">
+                <h6><strong>Side Planks</strong></h6>
+            </a>
+          </li>
+        </ul> 
+      </div>
+    </nav>    

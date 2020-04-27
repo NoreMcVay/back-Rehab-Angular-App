@@ -1,0 +1,63 @@
+ <div class="container">
+        <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+            <img src="assets/images/birddog.jpg" class="img-fluid card-img-top exercisePicSize">
+            <div class="card-body">
+                <div class="card-text text-center">
+                    <button 
+                        class="btn btn-md btn btn-dark" 
+                        (click)="open()">Watch Demo
+                    </button>
+                    <hr>
+                    <h4><strong>The Bird-Dog</strong></h4>
+                </div>
+            </div>
+        </div>
+        <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body">
+                <div class="card-text">
+                    <p><strong>Step 1</strong> - Assume a hands-and-knees position on the floor.</p>
+                    <p><strong>Step 2</strong> - Raise the left arm forward while simultaneously extending your right leg back until both are parallel to the floor. Ensure that hips are aligned with the torso and not tilted to one side. Hold for 10 seconds. Repeat on the other side.</p> 
+                    <p><strong>Step 3</strong> - Make sure that your foot stays flexed throughout the movement, also ensuring that your leg does not raise higher than your hips.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body centerCard">
+                <table>
+                    <tr>
+                        <div *ngIf="exercises.length <= 0">
+                            <td>
+                                <strong>Well Done!!!!</strong>
+                            </td>
+                            <td>
+                                <button
+                                    (click)="nextExercise()"
+                                    class="btn btn-success"><strong>Next Exercise...</strong>
+                                </button>
+                            </td>
+                        </div>
+                        <div *ngIf="exercises.length > 0">
+                            <input type="text" placeholder="Enter extra sets here" #newExercise/>
+                            <button
+                                (click)="addExercise(newExercise.value); newExercise.value=''">Add
+                            </button>
+                            <h3><strong>Sets/Exercises to Complete:</strong></h3>
+                        </div>
+                    </tr>
+                    <tr *ngFor="let exercise of exercises">
+                        <td>
+                            <ul>
+                                <li>{{exercise.reps}}</li>
+                            </ul> 
+                        </td>
+                        <td>
+                            <button 
+                            (click)="deleteExercise(exercise)" 
+                            class="btn btn-primary">Mark As Complete
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</div> 

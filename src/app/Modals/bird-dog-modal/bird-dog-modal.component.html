@@ -1,0 +1,18 @@
+<div role="document" class="modal-dialog">
+    <div class="modal-content">      
+        <div class="modal-header">
+        <h4 class="modal-title">Bird-Dog Demo</h4>
+        <button type="button" class="btn btn-outline-dark close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <ng-content></ng-content>
+            <iframe src="https://www.youtube.com/embed/dDMvch2Z9yY" class="videoClass"></iframe>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+        </div>
+    </div>
+</div>
+    

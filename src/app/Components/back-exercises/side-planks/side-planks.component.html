@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+        <img src="assets/images/sideplank.jpg" class="img-fluid card-img-top exercisePicSize">
+        <div class="card-body">
+            <div class="card-text text-center">
+                <button 
+                    class="btn btn-md btn btn-dark" 
+                    (click)="open()">Watch Demo
+                </button>
+                <hr>
+                <h4><strong>Side Planks</strong></h4>
+            </div>
+        </div>
+    </div>
+    <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+            <div class="card-text">
+                <p><strong>Step 1</strong> - Lie on your side, with your forearm on the floor and elbow underneath your shoulder. Place your hand on the opposing shoulder to stabilize your torso. Pull your feet back so the knees are at a 90-degree angle.</p>
+                <p><strong>Step 2</strong> - Lift the hips off of the floor and hold for 10 seconds. Try to maintain a straight line from your head down to your knees. Make sure that your hips are in line with the rest of your body. When completed turn over to other side.</p> 
+                <p><strong>Step 3</strong> - Optional: For a greater challenge, straighten the legs instead of bending them.</p>
+            </div>
+        </div>
+        </div>
+    <div class="card h-100 shadow p-3 mb-5 bg-white rounded text-center">
+        <div class="card-body">
+            <div *ngIf="!showTime">
+                <p><strong>Hold both sides for 1 minute with 10 seconds rest in between!</strong></p>
+                <button class="btn btn-danger" (click)="startCountdown()">START TIMER</button>
+            </div>
+            <div *ngIf="!wellDoneMessage && !letsGoMessage && !restMessage && showTime">
+                <h1>{{ time }}</h1>
+            </div>
+            <div *ngIf="wellDoneMessage">
+                <h2><strong><span class="greenCol">Completed! Great Job!</span></strong></h2>
+            </div>
+            <div *ngIf="restMessage">
+                <h2><strong><span class="redCol">10 SECONDS REST!</span></strong></h2>
+            </div>
+            <div *ngIf="letsGoMessage">
+                <h2><strong><span class="redCol">LET'S GO!!!</span></strong></h2>
+            </div>
+            <div *ngIf="lastRoundMessage">
+                <h2><strong><span class="redCol">1 MINUTE LEFT!</span></strong></h2>
+            </div>
+            <hr>
+            <p><strong>planks completed: {{ plankCounterNumber }}/ 2</strong></p>
+        </div>
+    </div>
+</div>

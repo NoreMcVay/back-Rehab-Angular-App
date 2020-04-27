@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+        <img src="assets/images/situp.jpg" class="img-fluid card-img-top exercisePicSize">
+        <div class="card-body">
+            <div class="card-text text-center">
+                <button 
+                    class="btn btn-md btn btn-dark" 
+                    (click)="open()">Watch Demo
+                </button>
+                <hr>
+                <h4><strong>The McGill Sit-Up</strong></h4>
+            </div>
+        </div>
+    </div>
+    <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+            <div class="card-text">
+                <p><strong>Step 1</strong> - Lie down on your back. Extend one leg and bend the knee of the other leg.</p>
+                <p><strong>Step 2</strong> - Put your hands under the lower back to maintain the natural arch of your spine.</p> 
+                <p><strong>Step 3</strong> - Pull your head, shoulders and chest off the floor all as one unit. Keep your back in neutral position. Don’t tuck your chin or let your head tilt back. Hold for 10 seconds.</p>
+                <p><strong>Step 4</strong> - Slowly lower yourself down. Do half of the repetitions with your left leg bent and half with your right leg bent.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body centerCard">
+            <table>
+                <tr>
+                    <div *ngIf="exercises.length <= 0">
+                        <td>
+                            <strong>Well Done!!!!</strong>
+                        </td>
+                        <td>
+                            <button
+                                (click)="nextExercise()"
+                                class="btn btn-success"><strong>Next Exercise...</strong>
+                            </button>
+                        </td>
+                    </div>
+                    <div *ngIf="exercises.length > 0">
+                        <input type="text" placeholder="Enter extra sets here" #newExercise/>
+                        <button
+                            (click)="addExercise(newExercise.value); newExercise.value=''">Add
+                        </button>
+                        <h3><strong>Sets/Exercises to Complete:</strong></h3>
+                        <br>
+                    </div>
+                </tr>
+                <tr *ngFor="let exercise of exercises">
+                    <td>
+                        <ul>
+                            <li>{{exercise.reps}}</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <button 
+                          (click)="deleteExercise(exercise)" 
+                          class="btn btn-primary">Mark As Complete
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div> 
